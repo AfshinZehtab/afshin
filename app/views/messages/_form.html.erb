@@ -1,0 +1,24 @@
+<%= form_for(@message, id: 'link') do |f| %>
+		
+	<div class="row">
+
+	    <div class="col-xs-6 col-sm-6 col-md-3" id="gozine">
+	        <select id="Ultra1" multiple class="form-control list" onchange="chosechanel()">  
+	            <%= selectchannel %>
+	        </select>
+	    </div>
+
+	</div>	
+
+		<div class="form-group">
+			<%= f.label :chat_id %>
+			<%= f.text_field :chat_id, class: 'form-control', id: 'srt1' %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :text %>
+			<%= f.text_area :text, class: 'form-control', size: "20x20" %>
+		</div>
+
+	<%= f.submit "Submit", class: 'btn btn-primary' %>
+<% end %>

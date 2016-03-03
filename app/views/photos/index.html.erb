@@ -1,0 +1,20 @@
+<h1>Photos#send</h1>
+
+<table class="table">
+	<thead>
+		<th>ID</th>
+		<th>User ID</th>
+		<th>Photo</th>
+		<th>Text</th>
+	</thead>
+	<% @photos.each do |photo| %>
+		<tr>
+			<td><%= photo.id %></td>
+			<td><%= photo.chat_id %></td>
+			<td><%= photo.photo %></td>
+			<td><%= photo.caption %></td>
+		</tr>
+	<% end %>
+</table>
+
+<%= link_to 'Create new message', new_photo_path, class: 'btn btn-primary' %>

@@ -1,0 +1,119 @@
+
+
+<%= render 'navbar' %>
+<%= render 'header' %>
+
+
+
+<div class="row body">
+
+    <div class="sent-photo col-xs-12 col-sm-12 col-md-12">
+
+        <div class="row">
+
+            <%= form_tag('', method: "post", enctype: "multipart/form-data", id: 'link') do %>
+            
+                <%= hidden_field_tag(:chat_id, "", :id => 'srt1') %>
+            
+                <div class="row">
+
+                    <div class="col-xs-6 col-sm-6 col-md-3" id="gozine">
+
+                        <select id="Ultra3" class="form-control list" onchange="runlink()">
+
+                            <%= selectchannel %>
+
+                        </select>
+
+                    </div>       
+
+
+                    <div class="col-xs-6 col-sm-6 col-md-3" id="gozine">
+
+                        <select id="Ultra1" class="form-control list" onchange="chosechanel()">  
+
+                            <%= selectaction %>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div class="dokme">
+
+                        <div class="col-xs-6 col-sm-6 col-md-3">
+
+                            <%= file_field_tag('', :id => 'upload-buttom', :class => "btn btn-success btn-lg", :onchange => "readURL1(this);") %>
+
+                        </div>
+
+
+                        <div class="col-xs-6 col-sm-6 col-md-3">
+
+                            <%= submit_tag("Send",:type => 'submit', :class => "btn btn-primary btn-lg active send-buttom") %>
+
+                        </div>
+
+                    </div>
+            
+                </div>
+
+                <br />
+                
+                <div class="row audiobox">
+
+                    <div class="col-xs-6 col-sm-6 col-md-6" class="form-group audioinfo">
+
+                        <%= text_field_tag 'performer', '', size: 75, placeholder: 'Enter performer...', class: 'form-control' %>
+
+                    </div>
+
+                    <div class="col-xs-6 col-sm-6 col-md-6" class="form-group audioinfo">
+
+                        <%= text_field_tag 'title', '', size: 75, placeholder: 'Enter some title...', class: 'form-control'  %>
+
+                    </div>
+
+                </div>
+      
+
+
+                <div class="row">
+            
+                    <div class="col-xs-12 col-sm-12 col-md-6" id="textbox">
+
+                        <%= text_area_tag('textarea', "", :class => 'form-control') %>
+
+                        <div id="textarea_feedback"></div>
+
+                    </div>
+
+
+                    <div class="col-xs-12 col-sm-12 col-md-6" id="image-box">
+
+                        <%= image_tag("",id: 'img', :class => 'img-responsive img-thumbnail', :alt => 'PREVIEW YOUR PHOTO') %>
+
+                    </div>
+
+                </div>
+
+            <% end %>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- <br><br><br><br><br><br><br><br><br><br><br><br>
+
+<form action="">
+  <input type="datetime-local" name="bdaytime">
+  <input type="submit" value="Send">
+</form> -->
+
+<!-- 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br> -->
+
